@@ -121,8 +121,8 @@ public class Lab07 extends Application{
         
         Button reset = new Button("RESET");
         reset.setOnAction(e -> {
-            seq.play();
-            pathTransition.play();
+            seq.playFromStart();
+            pathTransition.playFromStart();
         });
         
         Button exit = new Button("EXIT");
