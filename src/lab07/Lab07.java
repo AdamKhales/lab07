@@ -72,19 +72,19 @@ public class Lab07 extends Application{
         pathTransition.setOrientation(OrientationType.ORTHOGONAL_TO_TANGENT);
         pathTransition.setCycleCount(1);
         pathTransition.setAutoReverse(false);
-        pathTransition.play();
         
         
-        FadeTransition fadeTransition = new FadeTransition(Duration.millis(2500), ellipse);
+        
+        FadeTransition fadeTransition = new FadeTransition(Duration.millis(2700), ellipse);
         fadeTransition.setFromValue(1);
         fadeTransition.setToValue(0.1);
         fadeTransition.setCycleCount(1);
+        fadeTransition.setOnFinished(e -> ellipse.setOpacity(1.0));
         
         
         
         
-        
-        ScaleTransition scaleTransition = new ScaleTransition(Duration.millis(2500), ellipse);
+        ScaleTransition scaleTransition = new ScaleTransition(Duration.millis(2300), ellipse);
         scaleTransition.setFromX(1);
         scaleTransition.setFromY(1);
         scaleTransition.setToX(2);
@@ -98,13 +98,12 @@ public class Lab07 extends Application{
         rotateTransition.setToAngle(360);
         
         TranslateTransition translateTransition = new TranslateTransition(Duration.millis(2500), ellipse);
-        translateTransition.setFromX(350);
-        translateTransition.setFromY(350);
-        translateTransition.setByY(50);
+        translateTransition.setFromY(50);
+        translateTransition.setByY(-50);
 
         
         SequentialTransition seq = new SequentialTransition(fadeTransition, scaleTransition, rotateTransition, translateTransition);
-        seq.play();
+        
         Pane pane = new Pane();
         pane.getChildren().add(circle);
         pane.getChildren().add(rectPath);
