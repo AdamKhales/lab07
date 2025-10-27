@@ -9,6 +9,7 @@ package lab07;
 
 import javafx.animation.Animation;
 import javafx.animation.FadeTransition;
+import javafx.animation.Interpolator;
 import javafx.animation.PathTransition;
 import javafx.animation.PathTransition.OrientationType;
 import javafx.animation.RotateTransition;
@@ -75,10 +76,10 @@ public class Lab07 extends Application{
         pathTransition.setOrientation(OrientationType.ORTHOGONAL_TO_TANGENT);
         pathTransition.setCycleCount(1);
         pathTransition.setAutoReverse(false);
+        pathTransition.setInterpolator(Interpolator.LINEAR);
         
         
-        
-        FadeTransition fadeTransition = new FadeTransition(Duration.millis(2700), ellipse);
+        FadeTransition fadeTransition = new FadeTransition(Duration.millis(2500), ellipse);
         fadeTransition.setFromValue(1);
         fadeTransition.setToValue(0.1);
         fadeTransition.setCycleCount(1);
@@ -87,7 +88,7 @@ public class Lab07 extends Application{
         
         
         
-        ScaleTransition scaleTransition = new ScaleTransition(Duration.millis(2300), ellipse);
+        ScaleTransition scaleTransition = new ScaleTransition(Duration.millis(2500), ellipse);
         scaleTransition.setFromX(1);
         scaleTransition.setFromY(1);
         scaleTransition.setToX(2);
